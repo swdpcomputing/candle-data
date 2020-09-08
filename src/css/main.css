@@ -13,6 +13,7 @@
   font-family: ChunkFivePrint;
   font-size: 60px;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: url('../resources/images/candlestick1.jpg');
   background-size: auto;

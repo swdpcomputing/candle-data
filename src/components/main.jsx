@@ -6,6 +6,7 @@ import { paginate } from "../utils/paginate";
 import _ from "lodash";
 import { BinanceWSConnection } from "../common/binanceWSConnection";
 import "../css/main.css";
+import Grid from "@material-ui/core/Grid";
 
 class Main extends Component {
   state = {
@@ -88,36 +89,44 @@ class Main extends Component {
 
     return (
       <div>
-        <h1 className="main-title">Candle-data</h1>
+        <Grid container spacing={5} direction="column" alignItems="center">
+          <Grid container direction="column" alignItems="center">
+            <h1 className="main-title">Candle-data</h1>
+          </Grid>
 
-        <button
-          className="btn btn-primary"
-          onClick={this.state.bwsc.refresh}
-          type="button"
-        >
-          Refresh
-        </button>
+          <Grid container direction="row" justify='center' fluid>
+            <button
+              className="btn btn-primary"
+              onClick={this.state.bwsc.refresh}
+              type="button"
+            >
+              Refresh
+            </button>
 
-        <RadioGroup
-          items={refreshRates}
-          selectedItem={selectedRefreshRate}
-          onItemSelect={this.handleRefreshRateSelect}
-        />
+            <RadioGroup
+              items={refreshRates}
+              selectedItem={selectedRefreshRate}
+              onItemSelect={this.handleRefreshRateSelect}
+            />
+          </Grid>
 
-        <CoinPairTable
-          coinPairs={coinPairs}
-          sortColumn={sortColumn}
-          onLike={this.handleLike}
-          onView={this.handleView}
-          onSort={this.handleSort}
-        />
+          <Grid item xs={12}>
+            <CoinPairTable
+              coinPairs={coinPairs}
+              sortColumn={sortColumn}
+              onLike={this.handleLike}
+              onView={this.handleView}
+              onSort={this.handleSort}
+            />
+          </Grid>
 
-        <Paginate
-          itemsCount={totalCount}
-          pageSize={pageSize}
-          currentPage={currentPage}
-          onPageChange={this.handlePageChange}
-        />
+          <Paginate
+            itemsCount={totalCount}
+            pageSize={pageSize}
+            currentPage={currentPage}
+            onPageChange={this.handlePageChange}
+          />
+        </Grid>
       </div>
     );
   }

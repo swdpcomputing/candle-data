@@ -5,6 +5,7 @@ import RadioGroup from "../common/radioGroup";
 import { paginate } from "../utils/paginate";
 import _ from "lodash";
 import { BinanceWSConnection } from "../common/binanceWSConnection";
+import "../css/main.css";
 
 class Main extends Component {
   state = {
@@ -87,7 +88,7 @@ class Main extends Component {
 
     return (
       <div>
-        <h1 className="see-through">Candle-data</h1>
+        <h1 className="main-title">Candle-data</h1>
 
         <button
           className="btn btn-primary"

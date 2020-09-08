@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import CoinPairTable from "./coinPairTable";
 import Paginate from "../common/paginate";
-import RadioGroup from "../common/radioGroup";
+//import RadioGroup from "../common/radioGroup";
+import RadioGroupMUI from "../common/radioGroupMUI";
 import { paginate } from "../utils/paginate";
 import _ from "lodash";
 import { BinanceWSConnection } from "../common/binanceWSConnection";
@@ -94,7 +95,7 @@ class Main extends Component {
             <h1 className="main-title">Candle-data</h1>
           </Grid>
 
-          <Grid container direction="row" justify='center' fluid>
+          <Grid container direction="row" justify="center">
             <button
               className="btn btn-primary"
               onClick={this.state.bwsc.refresh}
@@ -103,7 +104,7 @@ class Main extends Component {
               Refresh
             </button>
 
-            <RadioGroup
+            <RadioGroupMUI
               items={refreshRates}
               selectedItem={selectedRefreshRate}
               onItemSelect={this.handleRefreshRateSelect}

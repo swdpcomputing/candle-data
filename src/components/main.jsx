@@ -8,6 +8,10 @@ import _ from "lodash";
 import { BinanceWSConnection } from "../common/binanceWSConnection";
 import "../css/main.css";
 import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import Radio from "@material-ui/core/Radio";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 class Main extends Component {
   state = {
@@ -90,19 +94,18 @@ class Main extends Component {
 
     return (
       <div>
-        <Grid container spacing={5} direction="column" alignItems="center">
+        <Grid container spacing={3} direction="column" alignItems="center" style={{marginTop:"5px"}}>
           <Grid container direction="column" alignItems="center">
             <h1 className="main-title">Candle-data</h1>
           </Grid>
 
           <Grid container direction="row" justify="center">
-            <button
-              className="btn btn-primary"
+            <FormControlLabel
+              control={<Radio color="primary"></Radio>}
+              label={'Refresh'}
               onClick={this.state.bwsc.refresh}
-              type="button"
-            >
-              Refresh
-            </button>
+              checked="true"
+            />
 
             <RadioGroupMUI
               items={refreshRates}

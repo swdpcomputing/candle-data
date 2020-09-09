@@ -5,7 +5,7 @@ import _ from "lodash";
 const Paginate = (props) => {
   const { itemsCount, pageSize, currentPage, onPageChange } = props;
   const pagesCount = Math.ceil(itemsCount / pageSize);
-  if (pagesCount === 1) {
+  if (pagesCount <= 1) {
     return null;
   } // No pages component if all items on one page
   const pages = _.range(1, pagesCount + 1); // Lodash - Create range of numbers

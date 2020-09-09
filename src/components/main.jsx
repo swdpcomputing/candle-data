@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import CoinPairTable from "./coinPairTable";
-import Paginate from "../common/paginate";
-//import RadioGroup from "../common/radioGroup";
-import RadioGroupMUI from "../common/radioGroupMUI";
-import { paginate } from "../utils/paginate";
-import _ from "lodash";
-import { BinanceWSConnection } from "../common/binanceWSConnection";
 import "../css/main.css";
 import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
 import Radio from "@material-ui/core/Radio";
-import InputLabel from "@material-ui/core/InputLabel";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import RadioGroupMUI from "../common/radioGroupMUI";
+import CoinPairTable from "./coinPairTable";
+import PaginateMUI from "../common/paginateMUI";
+import { BinanceWSConnection } from "../common/binanceWSConnection";
+import { paginate } from "../utils/paginate";
+import _ from "lodash";
 
 class Main extends Component {
   state = {
@@ -124,7 +121,7 @@ class Main extends Component {
             />
           </Grid>
 
-          <Paginate
+          <PaginateMUI
             itemsCount={totalCount}
             pageSize={pageSize}
             currentPage={currentPage}

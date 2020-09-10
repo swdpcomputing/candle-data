@@ -128,6 +128,7 @@ class Main extends Component {
             onPageChange={this.handlePageChange}
           />
         </Grid>
+        <footer style={{height:'50px'}}></footer>
       </div>
     );
   }

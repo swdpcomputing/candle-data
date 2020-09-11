@@ -6,17 +6,20 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioGroupMUI from "../common/radioGroupMUI";
 import CoinPairTable from "./coinPairTable";
 import PaginateMUI from "../common/paginateMUI";
+import DropdownMUI from "../common/dropdownMUI";
 import { BinanceWSConnection } from "../common/binanceWSConnection";
 import { paginate } from "../utils/paginate";
 import _ from "lodash";
+import { positions } from '@material-ui/system';
 
 class Main extends Component {
   state = {
     coinPairs: {},
     currentPage: 1,
-    pageSize: 10,
+    pageSize: 5,
+    pageSizes: [5, 10, 20, 30, 50, 100],
     sortColumn: { path: "coinPairId", order: "asc" },
-    selectedRefreshRate: "2s",
+    refreshRate: "2s",
     refreshRates: {
       Off: 0,
       "2s": 2000,
@@ -56,9 +59,13 @@ class Main extends Component {
     this.setState({ sortColumn });
   };
 
-  handleRefreshRateSelect = (refreshRate) => {
-    this.setState({ selectedRefreshRate: refreshRate }); //, currentPage: 1???
+  handleRefreshRateChange = (refreshRate) => {
+    this.setState({ refreshRate: refreshRate }); //, currentPage: 1???
     this.state.bwsc.setRefreshRate(this.state.refreshRates[refreshRate]);
+  };
+
+  handlePageSizeChange = (pageSize) => {
+    this.setState({ pageSize: pageSize });
   };
 
   getPagedData = () => {
@@ -82,16 +89,23 @@ class Main extends Component {
   render() {
     const {
       pageSize,
+      pageSizes,
       currentPage,
       sortColumn,
       refreshRates,
-      selectedRefreshRate,
+      refreshRate,
     } = this.state;
     const { totalCount, coinPairs } = this.getPagedData();
 
     return (
       <div>
-        <Grid container spacing={3} direction="column" alignItems="center" style={{marginTop:"5px"}}>
+        <Grid
+          container
+          spacing={3}
+          direction="column"
+          alignItems="center"
+          style={{ marginTop: "5px" }}
+        >
           <Grid container direction="column" alignItems="center">
             <h1 className="main-title">Candle-data</h1>
           </Grid>
@@ -99,15 +113,15 @@ class Main extends Component {
           <Grid container direction="row" justify="center">
             <FormControlLabel
               control={<Radio color="primary"></Radio>}
-              label={'Refresh'}
+              label={"Refresh"}
               onClick={this.state.bwsc.refresh}
               checked="true"
             />
 
             <RadioGroupMUI
               items={refreshRates}
-              selectedItem={selectedRefreshRate}
-              onItemSelect={this.handleRefreshRateSelect}
+              selectedItem={refreshRate}
+              onItemSelect={this.handleRefreshRateChange}
             />
           </Grid>
 
@@ -121,14 +135,22 @@ class Main extends Component {
             />
           </Grid>
 
-          <PaginateMUI
-            itemsCount={totalCount}
-            pageSize={pageSize}
-            currentPage={currentPage}
-            onPageChange={this.handlePageChange}
-          />
+          <Grid container direction="row" justify="center">
+            <PaginateMUI
+              itemsCount={totalCount}
+              pageSize={pageSize}
+              currentPage={currentPage}
+              onPageChange={this.handlePageChange}
+            />
+
+            <DropdownMUI
+              items={pageSizes}
+              selectedItem={pageSize}
+              onItemSelect={this.handlePageSizeChange}
+            />
+          </Grid>
         </Grid>
-        <footer style={{height:'50px'}}></footer>
+        <footer style={{ height: "50px" }}></footer>
       </div>
     );
   }

@@ -10,7 +10,6 @@ import DropdownMUI from "../common/dropdownMUI";
 import { BinanceWSConnection } from "../common/binanceWSConnection";
 import { paginate } from "../utils/paginate";
 import _ from "lodash";
-import { positions } from '@material-ui/system';
 
 class Main extends Component {
   state = {
@@ -136,18 +135,22 @@ class Main extends Component {
           </Grid>
 
           <Grid container direction="row" justify="center">
-            <PaginateMUI
-              itemsCount={totalCount}
-              pageSize={pageSize}
-              currentPage={currentPage}
-              onPageChange={this.handlePageChange}
-            />
-
-            <DropdownMUI
-              items={pageSizes}
-              selectedItem={pageSize}
-              onItemSelect={this.handlePageSizeChange}
-            />
+            <Grid item xs={4}></Grid>
+            <Grid>
+              <PaginateMUI
+                itemsCount={totalCount}
+                pageSize={pageSize}
+                currentPage={currentPage}
+                onPageChange={this.handlePageChange}
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <DropdownMUI
+                items={pageSizes}
+                selectedItem={pageSize}
+                onItemSelect={this.handlePageSizeChange}
+              />
+            </Grid>
           </Grid>
         </Grid>
         <footer style={{ height: "50px" }}></footer>

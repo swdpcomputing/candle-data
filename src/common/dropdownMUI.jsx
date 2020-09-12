@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
 
 const DropdownMUI = ({ items, selectedItem, onItemSelect }) => {
   const classes = useStyles();
-  //const [age, setAge] = React.useState("");
 
   const handleChange = (event) => {
     onItemSelect(event.target.value);
@@ -29,7 +28,8 @@ const DropdownMUI = ({ items, selectedItem, onItemSelect }) => {
       <FormControl variant="outlined" className={classes.formControl}>
         {/* <InputLabel id="label">Coins per page</InputLabel> */}
         <Select
-          style={{ height: "25px", marginBottom: "50px" }}
+          style={{ height: "25px", bottom:'4px'}}
+          
           labelId="demo-simple-select-helper-label"
           id="demo-simple-select-helper"
           value={selectedItem}

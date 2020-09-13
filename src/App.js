@@ -1,13 +1,14 @@
-import React from 'react';
-import Main from './components/main'
-import './css/App.css';
+import React from "react";
+import Main from "./components/main";
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import theme from "./theme";
 
-function App() {
-  return (
-    <React.Fragment>
-      <Main />
-    </React.Fragment>
-  );
-}
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <Main />
+  </ThemeProvider>
+);
 
 export default App;

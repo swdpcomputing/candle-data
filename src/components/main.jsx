@@ -122,6 +122,12 @@ class Main extends Component {
               selectedItem={refreshRate}
               onItemSelect={this.handleRefreshRateChange}
             />
+
+            <DropdownMUI
+              items={pageSizes}
+              selectedItem={pageSize}
+              onItemSelect={this.handlePageSizeChange}
+            />
           </Grid>
 
           <Grid item xs={12}>
@@ -135,22 +141,16 @@ class Main extends Component {
           </Grid>
 
           {/* <Grid container direction="row" justify="center"> */}
-            <Grid item xs={4}></Grid>
-            <Grid>
-              <PaginateMUI
-                itemsCount={totalCount}
-                pageSize={pageSize}
-                currentPage={currentPage}
-                onPageChange={this.handlePageChange}
-              />
-            </Grid>
-            <Grid item xs={4}>
-              <DropdownMUI
-                items={pageSizes}
-                selectedItem={pageSize}
-                onItemSelect={this.handlePageSizeChange}
-              />
-            </Grid>
+          <Grid item xs={4}></Grid>
+          <Grid>
+            <PaginateMUI
+              itemsCount={totalCount}
+              pageSize={pageSize}
+              currentPage={currentPage}
+              onPageChange={this.handlePageChange}
+            />
+          </Grid>
+          <Grid item xs={4}></Grid>
           {/* </Grid> */}
         </Grid>
         <footer style={{ height: "50px" }}></footer>

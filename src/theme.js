@@ -8,14 +8,16 @@ const theme = createMuiTheme({
     secondary: {
       main: "#f40703",
     },
+
+    grey: {
+      main: '#737373'
+    }
   },
 
   typography: {
     fontFamily: ["Roboto", '"Helvetica Neue"', "Arial", "sans-serif"].join(","),
     fontSize: 14,
   },
-
-  
 });
 
 export default theme;

@@ -24,7 +24,7 @@ class TableHeader extends Component {
   render() {
     //this.props.columns.map((column) => (console.log(column.path, column.key, column.path || column.key)))
     //console.log('')
-    
+
     return (
       <thead>
         <tr>
@@ -32,14 +32,13 @@ class TableHeader extends Component {
             <th
               className="clickable"
               style={{ textAlign: "center" }}
-              key={column.path || column.key}     
+              key={column.path || column.key}
               onClick={() => this.raiseSort(column.path)}
             >
               {column.label} {this.renderSortIcon(column)}
             </th>
           ))}
         </tr>
-
       </thead>
     );
   }

@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const Table = ({ columns, sortColumn, onSort, data }) => {
   return (
-    <table className="table">
+    <table className="table" style={{ width: '80vw', tableLayout: 'fixed' }}>
       <TableHeader columns={columns} sortColumn={sortColumn} onSort={onSort} />
       <TableBody data={data} columns={columns} /> 
     </table>

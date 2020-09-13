@@ -15,8 +15,8 @@ class Main extends Component {
   state = {
     coinPairs: {},
     currentPage: 1,
-    pageSize: 5,
-    pageSizes: [5, 10, 20, 30, 50, 100],
+    pageSize: 10,
+    pageSizes: [10, 20, 30, 50, 100],
     sortColumn: { path: "coinPairId", order: "asc" },
     refreshRate: "2s",
     refreshRates: {
@@ -134,7 +134,7 @@ class Main extends Component {
             />
           </Grid>
 
-          <Grid container direction="row" justify="center">
+          {/* <Grid container direction="row" justify="center"> */}
             <Grid item xs={4}></Grid>
             <Grid>
               <PaginateMUI
@@ -151,7 +151,7 @@ class Main extends Component {
                 onItemSelect={this.handlePageSizeChange}
               />
             </Grid>
-          </Grid>
+          {/* </Grid> */}
         </Grid>
         <footer style={{ height: "50px" }}></footer>
       </div>

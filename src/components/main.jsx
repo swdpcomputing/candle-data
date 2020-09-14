@@ -144,7 +144,6 @@ class Main extends Component {
             />
           </Grid>
 
-          {/* <Grid container direction="row" justify="center"> */}
           <Grid item xs={4}></Grid>
           <Grid>
             <PaginateMUI
@@ -155,7 +154,6 @@ class Main extends Component {
             />
           </Grid>
           <Grid item xs={4}></Grid>
-          {/* </Grid> */}
         </Grid>
         <footer style={{ height: "50px" }}></footer>
       </div>

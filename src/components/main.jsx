@@ -11,8 +11,6 @@ import { BinanceWSConnection } from "../common/binanceWSConnection";
 import { paginate } from "../utils/paginate";
 import _ from "lodash";
 
-//Next - Fix page size dissappearing when number of sizes drops below that number
-
 class Main extends Component {
   state = {
     coinPairs: {},

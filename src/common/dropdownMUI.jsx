@@ -4,24 +4,24 @@ import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 10,
+    labelPlacement: 'end'
   },
   selectEmpty: {
     marginTop: theme.spacing(0),
-    borderStyle: 'solid',
-    borderWidth: '2px',
-    borderRadius: '15px',
+    border: "2px solid",
+    borderRadius: "15px",
     borderColor: theme.palette.grey.main,
     height: "25px",
-    top: '1px'
   },
 }));
 
-const DropdownMUI = ({ items, selectedItem, onItemSelect }) => {
+const DropdownMUI = ({ items, selectedItem, onItemSelect, labelText }) => {
   const classes = useStyles();
 
   const handleChange = (event) => {
@@ -33,7 +33,7 @@ const DropdownMUI = ({ items, selectedItem, onItemSelect }) => {
       <FormControl variant="outlined" className={classes.formControl}>
         <Select
           className={classes.selectEmpty}
-          labelId="label"
+          labelId="labelID"
           id="id"
           value={selectedItem}
           onChange={handleChange}
@@ -42,6 +42,7 @@ const DropdownMUI = ({ items, selectedItem, onItemSelect }) => {
             <MenuItem value={item}>{item}</MenuItem>
           ))}
         </Select>
+        <FormHelperText>{labelText}</FormHelperText>
       </FormControl>
     </div>
   );

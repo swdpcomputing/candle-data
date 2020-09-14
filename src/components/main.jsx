@@ -11,6 +11,8 @@ import { BinanceWSConnection } from "../common/binanceWSConnection";
 import { paginate } from "../utils/paginate";
 import _ from "lodash";
 
+//Next - Fix page size dissappearing when number of sizes drops below that number
+
 class Main extends Component {
   state = {
     coinPairs: {},
@@ -100,7 +102,7 @@ class Main extends Component {
       <div>
         <Grid
           container
-          spacing={3}
+          spacing={1}
           direction="column"
           alignItems="center"
           style={{ marginTop: "5px" }}
@@ -115,6 +117,7 @@ class Main extends Component {
               label={"Refresh"}
               onClick={this.state.bwsc.refresh}
               checked="true"
+              style={{ marginBottom: "47px" }}
             />
 
             <RadioGroupMUI
@@ -127,6 +130,7 @@ class Main extends Component {
               items={pageSizes}
               selectedItem={pageSize}
               onItemSelect={this.handlePageSizeChange}
+              labelText={"Results Per Page"}
             />
           </Grid>
 

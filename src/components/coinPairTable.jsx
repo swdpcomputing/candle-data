@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LikeHeart from "../common/likeheart";
+import LikeHeart from "../common/likeHeart";
 import Table from "../common/table";
 
 class CoinPairTable extends Component {

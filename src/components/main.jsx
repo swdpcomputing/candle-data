@@ -5,10 +5,9 @@ import Radio from "@material-ui/core/Radio";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import RadioGroupMUI from "../common/radioGroupMUI";
 import CoinPairTable from "./coinPairTable";
-import PaginateMUI from "../common/paginateMUI";
-import DropdownMUI from "../common/dropdownMUI";
 import { BinanceWSConnection } from "../common/binanceWSConnection";
 import { paginate } from "../utils/paginate";
+import { PaginateMUI, DropdownMUI} from "../common";
 import _ from "lodash";
 
 class Main extends Component {

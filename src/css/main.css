@@ -11,16 +11,15 @@
 .main-title {
   color: rgb(0, 0, 0);
   font-family: ChunkFivePrint;
-  font-size: 60px;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: url('../resources/images/candlestick1.jpg');
+  background-image: url("../resources/images/candlestick1.jpg");
   background-size: auto;
   background-attachment: unset;
   background-position: 0%;
   width: 80%;
-  margin: 1%;
+  margin: 0%;
   font-size: 120px;
   animation: clouds-moving infinite 220s;
   animation-fill-mode: forwards;
@@ -38,9 +37,4 @@
   100% {
     background-position: 0%;
   }
-}
-.attribute {
-  position: relative;
-  font-size: 26px;
-  text-align: center;
 }

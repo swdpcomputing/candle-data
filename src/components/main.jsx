@@ -102,7 +102,6 @@ class Main extends Component {
           spacing={1}
           direction="column"
           alignItems="center"
-          style={{ marginTop: "5px" }}
         >
           <Grid container direction="column" alignItems="center">
             <h1 className="main-title">Candle-data</h1>

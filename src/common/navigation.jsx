@@ -4,12 +4,8 @@ import { Link, withRouter } from "react-router-dom";
 function Navigation(props) {
   return (
     <div className="navigation">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-          <Link class="navbar-brand" to="/">
-            React Multi-Page Website
-          </Link>
-   
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li
@@ -31,7 +27,6 @@ function Navigation(props) {
                   Timeline
                 </Link>
               </li>
- 
             </ul>
           </div>
         </div>

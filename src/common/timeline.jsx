@@ -13,7 +13,6 @@ import TimelineDot from "@material-ui/lab/TimelineDot";
 // import RepeatIcon from '@material-ui/icons/Repeat';
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-
 import TimelineHorizontal from "./timelineHorizontal";
 
 const useStyles = makeStyles((theme) => ({
@@ -43,7 +42,7 @@ export default function CustomizedTimeline() {
         <TimelineContent>
           <Paper elevation={3} className={classes.paper}>
             <Typography variant="h6" component="h1">
-              Eat
+              Title
             </Typography>
             <Typography>Because you need strength</Typography>
           </Paper>
@@ -76,7 +75,10 @@ export default function CustomizedTimeline() {
           <TimelineConnector className={classes.secondaryTail} />
         </TimelineSeparator>
         <TimelineContent>
-          <Paper elevation={3} className={classes.paper}>
+          <Paper elevation={24} className={classes.paper}>
+          <Typography variant="h6" component="h1">
+              Title
+            </Typography>
             {/* <Typography variant="h6" component="h1">
               Sleep
             </Typography>

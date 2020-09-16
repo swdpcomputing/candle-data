@@ -5,13 +5,14 @@ import TimelineItem from "@material-ui/lab/TimelineItem";
 import TimelineSeparator from "@material-ui/lab/TimelineSeparator";
 import TimelineConnector from "@material-ui/lab/TimelineConnector";
 import TimelineContent from "@material-ui/lab/TimelineContent";
-import TimelineDot from '@material-ui/lab/TimelineDot';
+import TimelineDot from "@material-ui/lab/TimelineDot";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   timeline: {
     transform: "rotate(90deg)",
+    height: 130,
   },
   timelineContentContainer: {
     textAlign: "left",
@@ -31,6 +32,8 @@ export default function TimelineHorizontal() {
   const classes = useStyles();
 
   return (
+    // Create map that rolls out typography, connectors and dots. has to reverse.
+
     <Timeline className={classes.timeline} align="alternate">
       <TimelineItem>
         <TimelineSeparator>
@@ -38,9 +41,7 @@ export default function TimelineHorizontal() {
               color="primary"
               className={classes.timelineIcon}
             /> */}
-            <TimelineDot color="primary">
-
-          </TimelineDot>
+          <TimelineDot color="primary"></TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent className={classes.timelineContentContainer}>

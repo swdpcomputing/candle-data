@@ -7,7 +7,7 @@ import RadioGroupMUI from "../common/radioGroupMUI";
 import CoinPairTable from "./coinPairTable";
 import { BinanceWSConnection } from "../common/binanceWSConnection";
 import { paginate } from "../utils/paginate";
-import { PaginateMUI, DropdownMUI} from "../common";
+import { PaginateMUI, DropdownMUI } from "../common";
 import _ from "lodash";
 
 class Main extends Component {
@@ -97,12 +97,7 @@ class Main extends Component {
 
     return (
       <div>
-        <Grid
-          container
-          spacing={1}
-          direction="column"
-          alignItems="center"
-        >
+        <Grid container spacing={1} direction="column" alignItems="center">
           <Grid container direction="column" alignItems="center">
             <h1 className="main-title">Candle-data</h1>
           </Grid>
@@ -151,7 +146,15 @@ class Main extends Component {
           </Grid>
           <Grid item xs={4}></Grid>
         </Grid>
-        <footer style={{ height: "30px" }}>Candle-data 2020</footer>
+        <footer
+          style={{
+            height: "30px",
+            textAlign: "center",
+            padding: "30px"
+          }}
+        >
+          Candle-data 2020
+        </footer>
       </div>
     );
   }

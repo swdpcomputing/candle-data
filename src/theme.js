@@ -9,9 +9,13 @@ const theme = createMuiTheme({
       main: "#f40703",
     },
 
+    error: {
+      main: "#FFBF00",
+    },
+
     grey: {
-      main: '#737373'
-    }
+      main: "#737373",
+    },
   },
 
   typography: {

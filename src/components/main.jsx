@@ -151,7 +151,7 @@ class Main extends Component {
           </Grid>
           <Grid item xs={4}></Grid>
         </Grid>
-        <footer style={{ height: "50px" }}></footer>
+        <footer style={{ height: "30px" }}>Candle-data 2020</footer>
       </div>
     );
   }

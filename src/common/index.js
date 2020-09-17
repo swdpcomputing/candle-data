@@ -1,5 +1,5 @@
 export { default as Navigation } from "./navigation";
-export { default as Timeline } from "./timeline";
+export { default as Timeline } from "../components/candleDataTimeline";
 export { default as ListGroup } from "./listGroup";
 export { default as LikeHeart } from "./likeHeart";
 export { default as PaginateMUI } from "./paginateMUI";

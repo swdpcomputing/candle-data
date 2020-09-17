@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   timeline: {
-    transform: "rotate(90deg)",
+    transform: "rotate(270deg)",
     height: 130,
   },
   timelineContentContainer: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
   timelineContent: {
     display: "inline-block",
-    transform: "rotate(-90deg)",
+    transform: "rotate(90deg)",
     textAlign: "center",
     minWidth: 50,
   },
@@ -28,74 +28,90 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TimelineHorizontal() {
+const TimelineHorizontal = ({ items }) => {
   const classes = useStyles();
 
   return (
-    // Create map that rolls out typography, connectors and dots. has to reverse.
-
     <Timeline className={classes.timeline} align="alternate">
-      <TimelineItem>
-        <TimelineSeparator>
-          {/* <CheckCircleOutlineIcon
-              color="primary"
-              className={classes.timelineIcon}
-            /> */}
-          <TimelineDot color="primary"></TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent className={classes.timelineContentContainer}>
-          <Paper className={classes.timelineContent}>
-            <Typography>Eat</Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          {/* <PauseCircleFilledIcon
-              color="primary"
-              className={classes.timelineIcon}
-            /> */}
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent className={classes.timelineContentContainer}>
-          <Paper className={classes.timelineContent}>
-            <Typography>Code</Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          {/* <CachedIcon color="primary" className={classes.timelineIcon} /> */}
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent className={classes.timelineContentContainer}>
-          <Paper className={classes.timelineContent}>
-            <Typography>Sleep</Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          {/* <CachedIcon color="primary" className={classes.timelineIcon} /> */}
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent className={classes.timelineContentContainer}>
-          <Paper className={classes.timelineContent}>
-            <Typography>Repeat</Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          {/* <ErrorIcon color="primary" className={classes.timelineIcon} /> */}
-        </TimelineSeparator>
-        <TimelineContent className={classes.timelineContentContainer}>
-          <Paper className={classes.timelineContent}>
-            <Typography>Sleep</Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
+      {items.map((item) => (
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot></TimelineDot>
+            <TimelineConnector/>
+          </TimelineSeparator>
+          <TimelineContent className={classes.timelineContentContainer}>
+           <Paper className={classes.timelineContent}>
+             <Typography>{item.itemText}</Typography>
+           </Paper>
+         </TimelineContent>
+        </TimelineItem>
+      ))}
     </Timeline>
+
+    // <Timeline className={classes.timeline} align="alternate">
+    //   <TimelineItem>
+    //     <TimelineSeparator>
+    //       {/* <CheckCircleOutlineIcon
+    //           color="primary"
+    //           className={classes.timelineIcon}
+    //         /> */}
+    //       <TimelineDot color="primary"></TimelineDot>
+    //       <TimelineConnector />
+    //     </TimelineSeparator>
+    //     <TimelineContent className={classes.timelineContentContainer}>
+    //       <Paper className={classes.timelineContent}>
+    //         <Typography>Eat</Typography>
+    //       </Paper>
+    //     </TimelineContent>
+    //   </TimelineItem>
+    //   <TimelineItem>
+    //     <TimelineSeparator>
+    //       {/* <PauseCircleFilledIcon
+    //           color="primary"
+    //           className={classes.timelineIcon}
+    //         /> */}
+    //       <TimelineConnector />
+    //     </TimelineSeparator>
+    //     <TimelineContent className={classes.timelineContentContainer}>
+    //       <Paper className={classes.timelineContent}>
+    //         <Typography>Code</Typography>
+    //       </Paper>
+    //     </TimelineContent>
+    //   </TimelineItem>
+    //   <TimelineItem>
+    //     <TimelineSeparator>
+    //       {/* <CachedIcon color="primary" className={classes.timelineIcon} /> */}
+    //       <TimelineConnector />
+    //     </TimelineSeparator>
+    //     <TimelineContent className={classes.timelineContentContainer}>
+    //       <Paper className={classes.timelineContent}>
+    //         <Typography>Sleep</Typography>
+    //       </Paper>
+    //     </TimelineContent>
+    //   </TimelineItem>
+    //   <TimelineItem>
+    //     <TimelineSeparator>
+    //       {/* <CachedIcon color="primary" className={classes.timelineIcon} /> */}
+    //       <TimelineConnector />
+    //     </TimelineSeparator>
+    //     <TimelineContent className={classes.timelineContentContainer}>
+    //       <Paper className={classes.timelineContent}>
+    //         <Typography>Repeat</Typography>
+    //       </Paper>
+    //     </TimelineContent>
+    //   </TimelineItem>
+    //   <TimelineItem>
+    //     <TimelineSeparator>
+    //       {/* <ErrorIcon color="primary" className={classes.timelineIcon} /> */}
+    //     </TimelineSeparator>
+    //     <TimelineContent className={classes.timelineContentContainer}>
+    //       <Paper className={classes.timelineContent}>
+    //         <Typography>Sleep</Typography>
+    //       </Paper>
+    //     </TimelineContent>
+    //   </TimelineItem>
+    // </Timeline>
   );
-}
+};
+
+export default TimelineHorizontal;

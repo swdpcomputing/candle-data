@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Timeline from "@material-ui/lab/Timeline";
 import TimelineItem from "@material-ui/lab/TimelineItem";
@@ -13,7 +13,7 @@ import TimelineDot from "@material-ui/lab/TimelineDot";
 // import RepeatIcon from '@material-ui/icons/Repeat';
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import TimelineHorizontal from "./timelineHorizontal";
+import TimelineHorizontal from "../common/timelineHorizontal";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -24,7 +24,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomizedTimeline() {
+const CandleDataTimeline = () => {
+  const [horizontalParameters1] = useState([{itemText: "Test"}]);
+  
   const classes = useStyles();
 
   return (
@@ -76,14 +78,14 @@ export default function CustomizedTimeline() {
         </TimelineSeparator>
         <TimelineContent>
           <Paper elevation={24} className={classes.paper}>
-          <Typography variant="h6" component="h1">
+            <Typography variant="h6" component="h1">
               Title
             </Typography>
             {/* <Typography variant="h6" component="h1">
               Sleep
             </Typography>
             <Typography>Because you need rest</Typography> */}
-            <TimelineHorizontal />
+            <TimelineHorizontal items={horizontalParameters1} />
           </Paper>
         </TimelineContent>
       </TimelineItem>
@@ -103,3 +105,5 @@ export default function CustomizedTimeline() {
     </Timeline>
   );
 }
+
+export default CandleDataTimeline;

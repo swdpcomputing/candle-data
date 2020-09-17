@@ -10,6 +10,9 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
+  paper: {
+    padding: "6px 16px",
+  },
   timeline: {
     transform: "rotate(270deg)",
     height: 130,
@@ -32,85 +35,36 @@ const TimelineHorizontal = ({ items }) => {
   const classes = useStyles();
 
   return (
-    <Timeline className={classes.timeline} align="alternate">
-      {items.map((item) => (
-        <TimelineItem>
-          <TimelineSeparator>
-            <TimelineDot></TimelineDot>
-            <TimelineConnector/>
-          </TimelineSeparator>
-          <TimelineContent className={classes.timelineContentContainer}>
-           <Paper className={classes.timelineContent}>
-             <Typography>{item.itemText}</Typography>
-           </Paper>
-         </TimelineContent>
-        </TimelineItem>
-      ))}
-    </Timeline>
-
-    // <Timeline className={classes.timeline} align="alternate">
-    //   <TimelineItem>
-    //     <TimelineSeparator>
-    //       {/* <CheckCircleOutlineIcon
-    //           color="primary"
-    //           className={classes.timelineIcon}
-    //         /> */}
-    //       <TimelineDot color="primary"></TimelineDot>
-    //       <TimelineConnector />
-    //     </TimelineSeparator>
-    //     <TimelineContent className={classes.timelineContentContainer}>
-    //       <Paper className={classes.timelineContent}>
-    //         <Typography>Eat</Typography>
-    //       </Paper>
-    //     </TimelineContent>
-    //   </TimelineItem>
-    //   <TimelineItem>
-    //     <TimelineSeparator>
-    //       {/* <PauseCircleFilledIcon
-    //           color="primary"
-    //           className={classes.timelineIcon}
-    //         /> */}
-    //       <TimelineConnector />
-    //     </TimelineSeparator>
-    //     <TimelineContent className={classes.timelineContentContainer}>
-    //       <Paper className={classes.timelineContent}>
-    //         <Typography>Code</Typography>
-    //       </Paper>
-    //     </TimelineContent>
-    //   </TimelineItem>
-    //   <TimelineItem>
-    //     <TimelineSeparator>
-    //       {/* <CachedIcon color="primary" className={classes.timelineIcon} /> */}
-    //       <TimelineConnector />
-    //     </TimelineSeparator>
-    //     <TimelineContent className={classes.timelineContentContainer}>
-    //       <Paper className={classes.timelineContent}>
-    //         <Typography>Sleep</Typography>
-    //       </Paper>
-    //     </TimelineContent>
-    //   </TimelineItem>
-    //   <TimelineItem>
-    //     <TimelineSeparator>
-    //       {/* <CachedIcon color="primary" className={classes.timelineIcon} /> */}
-    //       <TimelineConnector />
-    //     </TimelineSeparator>
-    //     <TimelineContent className={classes.timelineContentContainer}>
-    //       <Paper className={classes.timelineContent}>
-    //         <Typography>Repeat</Typography>
-    //       </Paper>
-    //     </TimelineContent>
-    //   </TimelineItem>
-    //   <TimelineItem>
-    //     <TimelineSeparator>
-    //       {/* <ErrorIcon color="primary" className={classes.timelineIcon} /> */}
-    //     </TimelineSeparator>
-    //     <TimelineContent className={classes.timelineContentContainer}>
-    //       <Paper className={classes.timelineContent}>
-    //         <Typography>Sleep</Typography>
-    //       </Paper>
-    //     </TimelineContent>
-    //   </TimelineItem>
-    // </Timeline>
+    <TimelineItem>
+      <TimelineSeparator>
+        <TimelineDot color="primary" variant="outlined">
+          {/* <HotelIcon /> */}
+        </TimelineDot>
+        <TimelineConnector className={classes.secondaryTail} />
+      </TimelineSeparator>
+      <TimelineContent>
+        <Paper elevation={24} className={classes.paper}>
+          <Typography variant="h6" component="h1">
+            Title
+          </Typography>
+          <Timeline className={classes.timeline} align="alternate">
+            {items.map((item) => (
+              <TimelineItem>
+                <TimelineSeparator>
+                  <TimelineDot></TimelineDot>
+                  <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent className={classes.timelineContentContainer}>
+                  <Paper className={classes.timelineContent}>
+                    <Typography>{item.itemText}</Typography>
+                  </Paper>
+                </TimelineContent>
+              </TimelineItem>
+            ))}
+          </Timeline>
+        </Paper>
+      </TimelineContent>
+    </TimelineItem>
   );
 };
 

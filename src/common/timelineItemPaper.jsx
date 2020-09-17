@@ -8,6 +8,7 @@ import TimelineDot from "@material-ui/lab/TimelineDot";
 import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -34,6 +35,7 @@ const TimelineItemPaper = ({
   oppositeContent,
   title,
   dotColour,
+  dotVariant, // outlined - default
   connectorColour,
   textLines,
 }) => {
@@ -45,12 +47,14 @@ const TimelineItemPaper = ({
         <Typography>{oppositeContent}</Typography>
       </TimelineOppositeContent>
       <TimelineSeparator>
-        <TimelineDot color={dotColour}></TimelineDot>
-        {connectorColour === "primary" ? (
-          <TimelineConnector className={classes.primaryClass} />
-        ) : (
-          <TimelineConnector className={classes.secondaryClass} />
-        )}
+        <TimelineDot color={dotColour} variant={dotVariant}></TimelineDot>
+        <TimelineConnector
+          className={
+            connectorColour === "primary"
+              ? classes.primaryClass
+              : classes.secondaryClass
+          }
+        />
       </TimelineSeparator>
       <TimelineContent className={classes.timelineContentContainer}>
         <Paper elevation={3} className={classes.paper}>
@@ -64,6 +68,24 @@ const TimelineItemPaper = ({
       </TimelineContent>
     </TimelineItem>
   );
+};
+
+TimelineItemPaper.defaultProps = {
+  oppositeContent: "",
+  title: "",
+  dotColour: 'primary',
+  dotVariant: 'default', // outlined - default
+  connectorColour: 'primary',
+  textLines: [],
+};
+
+TimelineItemPaper.propTypes = {
+  oppositeContent: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  dotColour: PropTypes.string.isRequired,
+  dotVariant: PropTypes.string.isRequired,
+  connectorColour: PropTypes.string.isRequired,
+  textLines: PropTypes.array.isRequired,
 };
 
 export default TimelineItemPaper;

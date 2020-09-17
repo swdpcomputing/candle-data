@@ -22,7 +22,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     minWidth: 50,
   },
-  secondaryTail: {
+  primaryClass: {
+    backgroundColor: theme.palette.primary.main,
+  },
+  secondaryClass: {
     backgroundColor: theme.palette.secondary.main,
   },
 }));
@@ -31,6 +34,7 @@ const TimelineItemPaper = ({
   oppositeContent,
   title,
   dotColour,
+  connectorColour,
   textLines,
 }) => {
   const classes = useStyles();
@@ -42,7 +46,11 @@ const TimelineItemPaper = ({
       </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineDot color={dotColour}></TimelineDot>
-        <TimelineConnector backgroundColor={theme.palette.secondary.main} />
+        {connectorColour === "primary" ? (
+          <TimelineConnector className={classes.primaryClass} />
+        ) : (
+          <TimelineConnector className={classes.secondaryClass} />
+        )}
       </TimelineSeparator>
       <TimelineContent className={classes.timelineContentContainer}>
         <Paper elevation={3} className={classes.paper}>

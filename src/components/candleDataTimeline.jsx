@@ -36,6 +36,7 @@ const CandleDataTimeline = () => {
         oppositeContent={"v0.1"}
         title={"Initial app completed"}
         dotColour={'primary'}
+        connectorColour={'secondary'}
         // prettier-ignore
         textLines={[
           {text: "-> WebSocket data from Binance API", color:'primary'},

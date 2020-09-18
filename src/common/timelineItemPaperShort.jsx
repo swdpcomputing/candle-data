@@ -2,16 +2,12 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TimelineItem from "@material-ui/lab/TimelineItem";
 import TimelineContent from "@material-ui/lab/TimelineContent";
-import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import TimelineDotAndConnector from "../common/timelineDotAndConnector";
 import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: "6px 16px",
-  },
   timelineContentContainer: {
     textAlign: "left",
   },
@@ -23,58 +19,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TimelineItemPaper = ({
-  oppositeContent,
-  title,
+const TimelineItemPaperShort = ({
+  itemText,
   dotColour,
   dotVariant,
   connectorColour,
-  textLines,
 }) => {
   const classes = useStyles();
 
   return (
     <TimelineItem>
-      <TimelineOppositeContent>
-        <Typography>{oppositeContent}</Typography>
-      </TimelineOppositeContent>
-
       <TimelineDotAndConnector
         dotColor={dotColour}
         dotVariant={dotVariant}
         connectorColour={connectorColour}
       />
-
       <TimelineContent className={classes.timelineContentContainer}>
-        <Paper elevation={3} className={classes.paper}>
-          <Typography variant="h6" component="h1">
-            {title}
-          </Typography>
-          {textLines.map((textLine) => (
-            <Typography color={textLine.color}>{textLine.text}</Typography>
-          ))}
+        <Paper className={classes.timelineContent}>
+          <Typography>{itemText}</Typography>
         </Paper>
       </TimelineContent>
     </TimelineItem>
   );
 };
 
-TimelineItemPaper.defaultProps = {
-  oppositeContent: "",
-  title: "",
+TimelineItemPaperShort.defaultProps = {
+  itemText: "",
   dotColour: "primary",
   dotVariant: "default", // outlined - default
   connectorColour: "primary",
-  textLines: [],
 };
 
-TimelineItemPaper.propTypes = {
-  oppositeContent: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+TimelineItemPaperShort.propTypes = {
+  itemText: PropTypes.string.isRequired,
   dotColour: PropTypes.string.isRequired,
   dotVariant: PropTypes.string.isRequired,
   connectorColour: PropTypes.string.isRequired,
-  textLines: PropTypes.array.isRequired,
 };
 
-export default TimelineItemPaper;
+export default TimelineItemPaperShort;

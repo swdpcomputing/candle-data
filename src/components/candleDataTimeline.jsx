@@ -27,9 +27,19 @@ const CandleDataTimeline = () => {
         ]}
       ></TimelineItemPaper>
 
-      <TimelineHorizontal items={[{ itemText: "Test" }]} />
+      <TimelineHorizontal
+        items={[{ itemText: "Test" }, { itemText: "Test2" }]}
+        dotColour={"primary"}
+        dotVariant={"default"}
+        connectorColour={"secondary"}
+      />
 
-      <TimelineHorizontal items={[{ itemText: "Test" }]} />
+      <TimelineHorizontal
+        items={[{ itemText: "Test" }, { itemText: "Test3" }]}
+        dotColour={"secondary"}
+        dotVariant={"outlined"}
+        connectorColour={"primary"}
+      />
     </Timeline>
   );
 };

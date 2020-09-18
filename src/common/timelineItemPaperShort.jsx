@@ -11,11 +11,12 @@ const useStyles = makeStyles((theme) => ({
   timelineContentContainer: {
     textAlign: "left",
   },
-  timelineContent: {
-    display: "inline-block",
+  paper: {
+    // display: "inline-block",
     transform: "rotate(90deg)",
     textAlign: "center",
     minWidth: 50,
+    width: 50
   },
 }));
 
@@ -35,7 +36,7 @@ const TimelineItemPaperShort = ({
         connectorColour={connectorColour}
       />
       <TimelineContent className={classes.timelineContentContainer}>
-        <Paper className={classes.timelineContent}>
+        <Paper className={classes.paper}>
           <Typography>{itemText}</Typography>
         </Paper>
       </TimelineContent>

@@ -16,18 +16,6 @@ const useStyles = makeStyles({
     transform: "rotate(270deg)",
     height: 130,
   },
-  timelineContentContainer: {
-    textAlign: "left",
-  },
-  timelineContent: {
-    display: "inline-block",
-    transform: "rotate(90deg)",
-    textAlign: "center",
-    minWidth: 50,
-  },
-  timelineIcon: {
-    transform: "rotate(-90deg)",
-  },
 });
 
 const TimelineHorizontal = ({ items, dotColour, dotVariant, connectorColour }) => {
@@ -40,12 +28,12 @@ const TimelineHorizontal = ({ items, dotColour, dotVariant, connectorColour }) =
         dotVariant={dotVariant}
         connectorColour={connectorColour}
       />
-      <TimelineContent>
+      <TimelineContent className={classes.timelineContent}>
         <Paper elevation={24} className={classes.paper}>
           <Typography variant="h6" component="h1">
             Title
           </Typography>
-          <Timeline className={classes.timeline} align="left">
+          <Timeline className={classes.timeline}>
             {items.map((item) => (
               <TimelineItemPaperShort itemText={item.itemText} />
             ))}

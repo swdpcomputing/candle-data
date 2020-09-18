@@ -35,7 +35,7 @@ const CandleDataTimeline = () => {
       />
 
       <TimelineHorizontal
-        items={[{ itemText: "Test" }, { itemText: "Test3" }]}
+        items={[{ itemText: "Test" }, { itemText: "Test3vhdfjvdfyjvfd" }]}
         dotColour={"secondary"}
         dotVariant={"outlined"}
         connectorColour={"primary"}

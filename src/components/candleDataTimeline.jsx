@@ -1,7 +1,7 @@
 import React from "react";
 import Timeline from "@material-ui/lab/Timeline";
 import TimelineItemPaper from "../common/timelineItemPaper";
-import TimelineHorizontal from "../common/timelineHorizontal";
+import TimelineHorizontal from "../common/stepperMUIWrapper";
 
 const CandleDataTimeline = () => {
   return (
@@ -28,14 +28,22 @@ const CandleDataTimeline = () => {
       ></TimelineItemPaper>
 
       <TimelineHorizontal
-        items={[{ itemText: "Test" }, { itemText: "Test2" }]}
+        items={[
+          { itemText: "Test1" },
+          { itemText: "Test2" },
+          { itemText: "Test3" },
+        ]}
         dotColour={"primary"}
         dotVariant={"default"}
         connectorColour={"secondary"}
       />
 
       <TimelineHorizontal
-        items={[{ itemText: "Test" }, { itemText: "Test3vhdfjvdfyjvfd" }]}
+        items={[
+          { itemText: "Test4" },
+          { itemText: "Test5" },
+          { itemText: "Test6" },
+        ]}
         dotColour={"secondary"}
         dotVariant={"outlined"}
         connectorColour={"primary"}

@@ -1,24 +1,28 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Timeline from "@material-ui/lab/Timeline";
 import TimelineItem from "@material-ui/lab/TimelineItem";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import TimelineDotAndConnector from "../common/timelineDotAndConnector";
-import TimelineItemPaperShort from "../common/timelineItemPaperShort";
+import TimelineDotAndConnector from "./timelineDotAndConnector";
+import StepperMUI from "./stepperMUI";
 
 const useStyles = makeStyles({
   paper: {
     padding: "6px 16px",
   },
   timeline: {
-    transform: "rotate(270deg)",
+    transform: "rotate(90deg)",
     height: 130,
   },
 });
 
-const TimelineHorizontal = ({ items, dotColour, dotVariant, connectorColour }) => {
+const StepperMUIWrapper = ({
+  items,
+  dotColour,
+  dotVariant,
+  connectorColour,
+}) => {
   const classes = useStyles();
 
   return (
@@ -33,15 +37,11 @@ const TimelineHorizontal = ({ items, dotColour, dotVariant, connectorColour }) =
           <Typography variant="h6" component="h1">
             Title
           </Typography>
-          <Timeline className={classes.timeline}>
-            {items.map((item) => (
-              <TimelineItemPaperShort itemText={item.itemText} />
-            ))}
-          </Timeline>
+          <StepperMUI items={items}></StepperMUI>
         </Paper>
       </TimelineContent>
     </TimelineItem>
   );
 };
 
-export default TimelineHorizontal;
+export default StepperMUIWrapper;

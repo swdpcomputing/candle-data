@@ -11,10 +11,7 @@ const Paginate = (props) => {
   const pages = _.range(1, pagesCount + 1); // Lodash - Create range of numbers
 
   return (
-    <nav
-      className="mt-2"
-      style={{ cursor: "pointer" }}
-    >
+    <nav className="mt-2" style={{ cursor: "pointer" }}>
       <ul className="pagination">
         {pages.map((page) => (
           <li
@@ -22,9 +19,7 @@ const Paginate = (props) => {
             className={page === currentPage ? "page-item active" : "page-item"}
             onClick={() => onPageChange(page)}
           >
-            <button className="page-link">
-              {page}
-            </button>
+            <button className="page-link">{page}</button>
           </li>
         ))}
       </ul>

@@ -29,7 +29,6 @@ const TimelineItemPaperShort = ({
 };
 
 TimelineItemPaperShort.defaultProps = {
-  itemText: "",
   dotColour: "primary",
   dotVariant: "default", // outlined - default
   connectorColour: "primary",
@@ -37,9 +36,6 @@ TimelineItemPaperShort.defaultProps = {
 
 TimelineItemPaperShort.propTypes = {
   itemText: PropTypes.string.isRequired,
-  dotColour: PropTypes.string.isRequired,
-  dotVariant: PropTypes.string.isRequired,
-  connectorColour: PropTypes.string.isRequired,
 };
 
 export default TimelineItemPaperShort;

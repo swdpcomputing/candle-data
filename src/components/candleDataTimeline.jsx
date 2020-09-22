@@ -1,7 +1,7 @@
 import React from "react";
 import Timeline from "@material-ui/lab/Timeline";
 import TimelineItemPaper from "../common/timelineItemPaper";
-import TimelineHorizontal from "../common/stepperMUIWrapper";
+import StepperMUIWrapper from "../common/stepperMUIWrapper";
 
 const CandleDataTimeline = () => {
   return (
@@ -11,7 +11,7 @@ const CandleDataTimeline = () => {
         title={"Initial app completed"}
         dotColour={"primary"}
         dotVariant={"default"}
-        connectorColour={"secondary"}
+        connectorColour={"primary"}
         // prettier-ignore
         textLines={[
           {text: "-> WebSocket data from Binance API", color:'primary'},
@@ -23,30 +23,37 @@ const CandleDataTimeline = () => {
           {text: "-> Pagination component that dissappears if there is one page", color:'primary'},
           {text: "-> Multi-page functionality using React Router", color:'primary'},
           {text: "-> Table only shows coin-pairs that have updated since last refresh", color:'secondary'},
+          {text: "-> Like buttons inactive, open button inactive ", color:'secondary'},
           {text: "-> Initial shift left ~5px when table first loads ", color:'secondary'},
         ]}
       ></TimelineItemPaper>
 
-      <TimelineHorizontal
+      <StepperMUIWrapper
+        titleText={"FirstStepper"}
         items={[
           { itemText: "Test1" },
           { itemText: "Test2" },
           { itemText: "Test3" },
+          { itemText: "Test4" },
+          { itemText: "Test5" },
         ]}
-        dotColour={"primary"}
-        dotVariant={"default"}
+        activeStep={0}
+        dotColour={"secondary"}
+        dotVariant={"outlined"}
         connectorColour={"secondary"}
       />
 
-      <TimelineHorizontal
+      <StepperMUIWrapper
+        titleText={"SecondStepper"}
         items={[
           { itemText: "Test4" },
           { itemText: "Test5" },
           { itemText: "Test6" },
         ]}
+        activeStep={0}
         dotColour={"secondary"}
         dotVariant={"outlined"}
-        connectorColour={"primary"}
+        connectorColour={"secondary"}
       />
     </Timeline>
   );

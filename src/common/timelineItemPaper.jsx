@@ -61,7 +61,7 @@ const TimelineItemPaper = ({
 
 TimelineItemPaper.defaultProps = {
   oppositeContent: "",
-  title: "",
+  title: "Title",
   dotColour: "primary",
   dotVariant: "default", // outlined - default
   connectorColour: "primary",
@@ -69,11 +69,6 @@ TimelineItemPaper.defaultProps = {
 };
 
 TimelineItemPaper.propTypes = {
-  oppositeContent: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  dotColour: PropTypes.string.isRequired,
-  dotVariant: PropTypes.string.isRequired,
-  connectorColour: PropTypes.string.isRequired,
   textLines: PropTypes.array.isRequired,
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -20,11 +21,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const StepperMUI = ({ items }) => {
+const StepperMUI = ({ items, activeStep }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Stepper activeStep={0} alternativeLabel>
+      <Stepper activeStep={activeStep} alternativeLabel>
         {items.map((item) => (
           <Step key={item.itemText}>
             <StepLabel
@@ -41,6 +42,14 @@ const StepperMUI = ({ items }) => {
       </Stepper>
     </div>
   );
+};
+
+StepperMUI.defaultProps = {
+  activeStep: 0,
+};
+
+StepperMUI.propTypes = {
+  items: PropTypes.object.isRequired,
 };
 
 export default StepperMUI;

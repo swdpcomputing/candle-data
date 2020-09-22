@@ -1,5 +1,6 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles"
+import PropTypes from "prop-types";
 import TimelineItem from "@material-ui/lab/TimelineItem";
 import TimelineContent from "@material-ui/lab/TimelineContent";
 import Paper from "@material-ui/core/Paper";
@@ -18,7 +19,9 @@ const useStyles = makeStyles({
 });
 
 const StepperMUIWrapper = ({
+  titleText,
   items,
+  activeStep,
   dotColour,
   dotVariant,
   connectorColour,
@@ -28,20 +31,32 @@ const StepperMUIWrapper = ({
   return (
     <TimelineItem>
       <TimelineDotAndConnector
-        dotColor={dotColour}
+        dotColour={dotColour}
         dotVariant={dotVariant}
         connectorColour={connectorColour}
       />
       <TimelineContent className={classes.timelineContent}>
         <Paper elevation={24} className={classes.paper}>
           <Typography variant="h6" component="h1">
-            Title
+            {titleText}
           </Typography>
-          <StepperMUI items={items}></StepperMUI>
+          <StepperMUI items={items} activeStep={activeStep}></StepperMUI>
         </Paper>
       </TimelineContent>
     </TimelineItem>
   );
+};
+
+StepperMUIWrapper.defaultProps = {
+  titleText: "Title",
+  activeStep: 0,
+  dotColour: "primary",
+  dotVariant: "default", // outlined - default
+  connectorColour: "primary",
+};
+
+StepperMUIWrapper.propTypes = {
+  items: PropTypes.object.isRequired,
 };
 
 export default StepperMUIWrapper;

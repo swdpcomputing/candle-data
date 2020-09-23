@@ -27,8 +27,9 @@ const StepperMUI = ({ items, activeStep }) => {
     <div className={classes.root}>
       <Stepper activeStep={activeStep} alternativeLabel>
         {items.map((item) => (
-          <Step key={item.itemText}>
+          <Step key={"step" + item.itemText}>
             <StepLabel
+              key={"stepLabel" + item.itemText}
               StepIconProps={{
                 classes: {
                   active: classes.icon,

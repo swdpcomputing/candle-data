@@ -11,12 +11,12 @@ class BinanceWSConnection {
     this._rawData = {};
     this._server = {};
     this.intervalId = 0;
+    this.ws = {};
     this.initialise();
   }
 
   setRefreshRate = (newRefreshRate) => {
     this._refreshRate = newRefreshRate;
-    console.log(this._refreshRate);
     this.startCallLoop();
   };
 
@@ -40,28 +40,32 @@ class BinanceWSConnection {
 
   connect = () => {
     return new Promise((resolve, reject) => {
-      var ws = new WebSocket(this._url);
+      this.ws = new WebSocket(this._url);
 
-      ws.onopen = () => {
+      this.ws.onopen = () => {
         console.log("Connected WebSocket");
-        resolve(ws);
+        resolve(this.ws);
       };
 
-      ws.onclose = (e) => {
+      this.ws.onclose = (e) => {
         console.log("Socket is closed");
       };
 
-      ws.onerror = (err) => {
+      this.ws.onerror = (err) => {
         this.socketError(err);
         reject(err);
-        ws.close();
+        this.ws.close();
       };
 
-      ws.onmessage = (rawData) => {
+      this.ws.onmessage = (rawData) => {
         this._rawData = rawData;
       };
     });
   };
+
+  disconnect = () => {
+    this.ws.close();
+  }
 
   socketError = (err) => {
     console.error("Socket encountered error: ", err.message, "Closing socket");

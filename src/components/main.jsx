@@ -32,7 +32,12 @@ class Main extends Component {
   componentDidMount() {
     const url = "wss://stream.binance.com:9443/ws/!miniTicker@arr";
     const bwsc = new BinanceWSConnection(url, this.handleWSData);
-    this.setState({ bwsc });
+    this.setState({ bwsc: bwsc });
+  }
+
+  componentWillUnmount() {
+    // Does clean up websoket, error only displays once
+    this.state.bwsc.disconnect();
   }
 
   handleWSData = (coinPairs) => {
@@ -81,7 +86,8 @@ class Main extends Component {
     );
 
     const coinPairs = paginate(sorted, currentPage, pageSize);
-    const totalCount = allCoinPairs.length === undefined ? 0 : allCoinPairs.length;
+    const totalCount =
+      allCoinPairs.length === undefined ? 0 : allCoinPairs.length;
     return { totalCount, coinPairs };
   };
 
@@ -151,7 +157,7 @@ class Main extends Component {
           style={{
             height: "30px",
             textAlign: "center",
-            padding: "30px"
+            padding: "30px",
           }}
         >
           Candle-data 2020

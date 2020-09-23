@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LikeHeart from "../common/likeHeart";
+import Likeheart from "../common/likeheart";
 import Table from "../common/table";
 
 class CoinPairTable extends Component {
@@ -13,7 +13,7 @@ class CoinPairTable extends Component {
       label: "Pin",
       key: "pin",
       content: (coinPair) => (
-        <LikeHeart
+        <Likeheart
           liked={coinPair.liked}
           onClick={() => this.props.onLike(coinPair)}
         />

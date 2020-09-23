@@ -51,7 +51,7 @@ const TimelineItemPaper = ({
             {title}
           </Typography>
           {textLines.map((textLine) => (
-            <Typography color={textLine.color} key={textLine}>{textLine.text}</Typography>
+            <Typography color={textLine.color} key={textLine.text}>{textLine.text}</Typography>
           ))}
         </Paper>
       </TimelineContent>

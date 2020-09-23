@@ -49,7 +49,7 @@ StepperMUI.defaultProps = {
 };
 
 StepperMUI.propTypes = {
-  items: PropTypes.object.isRequired,
+  items: PropTypes.array.isRequired,
 };
 
 export default StepperMUI;

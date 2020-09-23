@@ -81,7 +81,8 @@ class Main extends Component {
     );
 
     const coinPairs = paginate(sorted, currentPage, pageSize);
-    return { totalCount: allCoinPairs.length, coinPairs };
+    const totalCount = allCoinPairs.length === undefined ? 0 : allCoinPairs.length;
+    return { totalCount, coinPairs };
   };
 
   render() {
@@ -107,7 +108,7 @@ class Main extends Component {
               control={<Radio color="primary"></Radio>}
               label={"Refresh"}
               onClick={this.state.bwsc.refresh}
-              checked="true"
+              checked={true}
               style={{ marginBottom: "47px" }}
             />
 

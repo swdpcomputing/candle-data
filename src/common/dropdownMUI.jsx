@@ -39,7 +39,7 @@ const DropdownMUI = ({ items, selectedItem, onItemSelect, labelText }) => {
           onChange={handleChange}
         >
           {items.map((item) => (
-            <MenuItem value={item}>{item}</MenuItem>
+            <MenuItem value={item} key={item}>{item}</MenuItem>
           ))}
         </Select>
         <FormHelperText>{labelText}</FormHelperText>
@@ -53,7 +53,7 @@ DropdownMUI.propTypes = {
     PropTypes.array.isRequired,
     PropTypes.object.isRequired,
   ]),
-  selectedItem: PropTypes.string.isRequired,
+  selectedItem: PropTypes.number.isRequired,
   onItemSelect: PropTypes.func.isRequired,
 };
 

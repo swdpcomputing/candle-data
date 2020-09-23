@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import PropTypes from "prop-types";
 import TimelineItem from "@material-ui/lab/TimelineItem";
 import TimelineContent from "@material-ui/lab/TimelineContent";
+import TimelineOppositeContent from "@material-ui/lab/TimelineOppositeContent";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import TimelineDotAndConnector from "./timelineDotAndConnector";
@@ -20,6 +21,7 @@ const useStyles = makeStyles({
 
 const StepperMUIWrapper = ({
   titleText,
+  oppositeContent,
   items,
   activeStep,
   dotColour,
@@ -30,6 +32,9 @@ const StepperMUIWrapper = ({
 
   return (
     <TimelineItem>
+      <TimelineOppositeContent>
+        <Typography>{oppositeContent}</Typography>
+      </TimelineOppositeContent>
       <TimelineDotAndConnector
         dotColour={dotColour}
         dotVariant={dotVariant}
@@ -48,6 +53,7 @@ const StepperMUIWrapper = ({
 };
 
 StepperMUIWrapper.defaultProps = {
+  oppositeContent: "",
   titleText: "Title",
   activeStep: 0,
   dotColour: "primary",

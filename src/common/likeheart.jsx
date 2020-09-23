@@ -1,6 +1,6 @@
 import React from "react";
 
-const LikeHeart = ({liked, onClick}) => {//Destructuring props from the props argument of the function
+const Likeheart = ({liked, onClick}) => {//Destructuring props from the props argument of the function
   let heartState = "fa fa-heart";
   if (!liked) heartState += "-o";
   return (
@@ -12,4 +12,4 @@ const LikeHeart = ({liked, onClick}) => {//Destructuring props from the props ar
   );
 };
 
-export default LikeHeart;
+export default Likeheart;

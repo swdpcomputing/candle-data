@@ -23,13 +23,14 @@ const CandleDataTimeline = () => {
           {text: "-> Pagination component that dissappears if there is one page", color:'primary'},
           {text: "-> Multi-page functionality using React Router", color:'primary'},
           {text: "-> Table only shows coin-pairs that have updated since last refresh", color:'secondary'},
-          {text: "-> Like buttons inactive, open button inactive ", color:'secondary'},
+          {text: "-> Like button inactive, open button inactive ", color:'secondary'},
           {text: "-> Initial shift left ~5px when table first loads ", color:'secondary'},
         ]}
       ></TimelineItemPaper>
 
       <StepperMUIWrapper
         titleText={"FirstStepper"}
+        oppositeContent={"v0.2"}
         items={[
           { itemText: "Test1" },
           { itemText: "Test2" },
@@ -45,6 +46,7 @@ const CandleDataTimeline = () => {
 
       <StepperMUIWrapper
         titleText={"SecondStepper"}
+        oppositeContent={"v0.3"}
         items={[
           { itemText: "Test4" },
           { itemText: "Test5" },

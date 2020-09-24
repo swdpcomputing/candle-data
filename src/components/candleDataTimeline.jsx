@@ -79,9 +79,26 @@ const CandleDataTimeline = () => {
         oppositeContent={"v0.2"}
         // prettier-ignore
         items={[
-          { itemText: "Drop-downdown / drawer / collapsible for each table row"},
+          { itemText: "Drop-down / drawer / collapsible for each table row"},
           { itemText: "Candlestick chart in drop-down" },
           { itemText: "Trading pair details in drop-down" },
+        ]}
+        activeStep={-1}
+        dotColour={"secondary"}
+        dotVariant={"outlined"}
+        connectorColour={"secondary"}
+      />
+
+      <StepperMUIWrapper
+        titleText={"New page for trading pair data analysis"}
+        oppositeContent={"v0.21"}
+        // prettier-ignore
+        items={[
+          { itemText: "Zooming and scrolling of candlestick chart"},
+          { itemText: "Analyse data for patterns (Engulfing, Harami, etc)" },
+          { itemText: "Drop-down component to choose pattern to highlight on chart" },
+          { itemText: "Analyse data following patterns to discover trends" },
+          { itemText: "Interface to select factors for data analysis" },
         ]}
         activeStep={-1}
         dotColour={"secondary"}

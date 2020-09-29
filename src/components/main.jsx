@@ -160,7 +160,7 @@ class Main extends Component {
             padding: "30px",
           }}
         >
-          Candle-data 2020 Test4
+          Candle-data 2020
         </footer>
       </div>
     );

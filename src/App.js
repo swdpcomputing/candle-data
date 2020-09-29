@@ -13,9 +13,8 @@ const App = () => (
     <Router>
       <Navigation />
       <Switch>
-        <Route exact path="/" exact component={() => <Main />} />
+        <Route path="/" exact component={() => <Main />} />
         <Route
-          exact
           path="/timeline"
           exact
           component={() => <CandleDataTimeline />}

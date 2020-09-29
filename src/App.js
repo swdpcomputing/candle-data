@@ -11,14 +11,11 @@ const App = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
     <Router>
-      <Navigation />
+      <Navigation basename={process.env.PUBLIC_URL}/>
       <Switch>
-        <Route path="/" exact component={() => <Main />} />
-        <Route
-          path="/timeline"
-          exact
-          component={() => <CandleDataTimeline />}
-        />
+        <Route exact path="/" component={Main} />
+        <Route path="/timeline" component={CandleDataTimeline} />
+        <Route component={() => <div>404 Not found</div>} />
       </Switch>
     </Router>
   </ThemeProvider>

@@ -2,7 +2,7 @@
   "name": "candle-data",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://swdpcomputing.github.io/candle-data",
+  "homepage": "http://swdpcomputing.github.io/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",

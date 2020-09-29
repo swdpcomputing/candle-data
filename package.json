@@ -2,7 +2,6 @@
   "name": "candle-data",
   "version": "0.1.0",
   "private": true,
-  //remove app name from end to launch as home or blank
   "homepage": "http://swdpcomputing.github.io/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.0",

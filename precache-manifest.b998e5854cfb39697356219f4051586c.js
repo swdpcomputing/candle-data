@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a341b9e3d94458f2d09026590243e276",
+    "revision": "6f416f486ef1276ede732d7b4fdd10c7",
     "url": "/candle-data/index.html"
   },
   {
-    "revision": "0e019c1df6a9887fbe9d",
+    "revision": "f2dd881025d65e4091a9",
     "url": "/candle-data/static/css/2.1caddb76.chunk.css"
   },
   {
-    "revision": "05b9c8fd0d22b848c637",
+    "revision": "d21cdc5944991a96d8e2",
     "url": "/candle-data/static/css/main.0f2696ad.chunk.css"
   },
   {
-    "revision": "0e019c1df6a9887fbe9d",
-    "url": "/candle-data/static/js/2.f7d64cbd.chunk.js"
+    "revision": "f2dd881025d65e4091a9",
+    "url": "/candle-data/static/js/2.740b2c21.chunk.js"
   },
   {
     "revision": "68ba00d5eb083746d913686923a3d904",
-    "url": "/candle-data/static/js/2.f7d64cbd.chunk.js.LICENSE.txt"
+    "url": "/candle-data/static/js/2.740b2c21.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "05b9c8fd0d22b848c637",
-    "url": "/candle-data/static/js/main.b3bc9399.chunk.js"
+    "revision": "d21cdc5944991a96d8e2",
+    "url": "/candle-data/static/js/main.93d9a05d.chunk.js"
   },
   {
     "revision": "7b2339c95d2f1e8d0924",

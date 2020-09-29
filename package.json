@@ -2,11 +2,12 @@
   "name": "candle-data",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://swdpcomputing.github.io/candle-data",
+  //remove app name from end to launch as home or blank
+  "homepage": "http://swdpcomputing.github.io/",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.14.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/fontawesome-free": "^5.15.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.31",
+    "@fortawesome/free-solid-svg-icons": "^5.15.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@material-ui/core": "^4.11.0",
     "@material-ui/lab": "^4.0.0-alpha.56",

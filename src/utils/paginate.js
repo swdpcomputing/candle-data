@@ -1,7 +1,7 @@
-import _ from "lodash";
+import lodash from "lodash";
 
 export function paginate(items, pageNumber, pageSize) {
-  console.log('pag ', items);
   const startIndex = (pageNumber - 1) * pageSize;
-  return _(items).slice(startIndex).take(pageSize).value();
+  console.log("pag ", lodash(items).slice(startIndex).take(pageSize).value());
+  return lodash(items).slice(startIndex).take(pageSize).value();
 }
